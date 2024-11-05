@@ -1,0 +1,10 @@
+debug/aboutdialog.o
+debug/main.o
+debug/replacedialog.o
+debug/searchdialog.o
+debug/texteditor.o
+debug/qrc_1.o
+debug/moc_aboutdialog.o
+debug/moc_replacedialog.o
+debug/moc_searchdialog.o
+debug/moc_texteditor.o

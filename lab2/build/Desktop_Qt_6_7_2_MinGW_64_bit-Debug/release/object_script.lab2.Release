@@ -1,0 +1,10 @@
+release/aboutdialog.o
+release/main.o
+release/replacedialog.o
+release/searchdialog.o
+release/texteditor.o
+release/qrc_1.o
+release/moc_aboutdialog.o
+release/moc_replacedialog.o
+release/moc_searchdialog.o
+release/moc_texteditor.o

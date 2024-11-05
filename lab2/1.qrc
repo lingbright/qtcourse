@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/OIP-C.jpg</file>
+        <file>images/add_circle_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png</file>
+        <file>images/content_copy_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png</file>
+        <file>images/content_cut_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png</file>
+        <file>images/content_paste_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png</file>
+        <file>images/file_open_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png</file>
+        <file>images/format_color_text_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png</file>
+        <file>images/palette_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png</file>
+        <file>images/redo_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png</file>
+        <file>images/save_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png</file>
+        <file>images/undo_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png</file>
+        <file>images/format_paint_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png</file>
+    </qresource>
+</RCC>
