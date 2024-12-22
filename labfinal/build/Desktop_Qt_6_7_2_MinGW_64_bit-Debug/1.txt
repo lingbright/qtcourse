@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "aboutdialog.h"
+#include "aboutdialog.h"123
 #include "searchdialog.h"
 #include "replacedialog.h"
 #include "qfiledialog.h"

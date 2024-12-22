@@ -237,8 +237,11 @@ void MainWindow::on_actionGoTo_triggered()
     // 弹出对话框选择书签
     QString selectedBookmark = QInputDialog::getItem(this, "去到",
                                                      "选择一个书签:",
-                                                     bookmarkList, 0, false);
-
+                                                     bookmarkList, -1, false);
+    if (selectedBookmark.isEmpty()) {
+        // 如果点击了取消按钮，selectedBookmark会为空
+        return;  // 退出函数，不进行后续操作
+    }
     if (!selectedBookmark.isEmpty()) {
         int lineNumber = selectedBookmark.split(" ")[1].toInt() - 1;
 
@@ -269,17 +272,27 @@ void MainWindow::on_actionRemove_triggered()
         bookmarkList.append("Line " + QString::number(line + 1));
     }
 
-    // 弹出对话框选择书签
+    // 弹出对话框选择书签，设置默认项为无效项(-1)
     QString selectedBookmark = QInputDialog::getItem(this, "移除书签",
                                                      "选择一个书签移除:",
-                                                     bookmarkList, 0, false);
+                                                     bookmarkList, -1, false);
 
-    if (!selectedBookmark.isEmpty()) {
-        int lineNumber = selectedBookmark.split(" ")[1].toInt() - 1;
-        bookmarks[currentEditor].remove(lineNumber);
-        QMessageBox::information(this, "Info", "移除书签在: " + QString::number(lineNumber + 1));
+    if (selectedBookmark.isEmpty()) {
+        // 如果点击了取消按钮，selectedBookmark会为空
+        return;  // 退出函数，不进行后续操作
     }
+
+    // 获取选中的书签对应的行号
+    int lineNumber = selectedBookmark.split(" ")[1].toInt() - 1;
+
+    // 从书签列表中移除选中的行
+    bookmarks[currentEditor].remove(lineNumber);
+
+    // 提示移除成功
+    QMessageBox::information(this, "Info", "移除书签在: " + QString::number(lineNumber + 1));
 }
+
+
 
 void MainWindow::on_actionRemoveAll_triggered()
 {
@@ -321,8 +334,10 @@ void MainWindow::on_actionRemoveFavorite_triggered()
     // 弹出对话框让用户选择需要移除的路径
     QString fileToRemove = QInputDialog::getItem(this, "移除收藏的文件",
                                                  "选择一个收藏去移除:",
-                                                 favoriteList, 0, false);
-
+                                                 favoriteList, -1, false);
+    if (fileToRemove.isEmpty()) {
+        return;  // 退出函数，不进行后续操作
+    }
     if (!fileToRemove.isEmpty()) {
         // 从集合中移除
         favorites.remove(fileToRemove);
@@ -339,8 +354,11 @@ void MainWindow::on_actionOpenFavorite_triggered()
     // 弹出对话框让用户选择需要打开的路径
     QString fileToOpen = QInputDialog::getItem(this, "打开收藏夹",
                                                "选择文件打开:",
-                                               favoriteList, 0, false);
+                                               favoriteList, -1, false);
 
+    if (fileToOpen.isEmpty()) {
+        return;  // 退出函数，不进行后续操作
+    }
     if (!fileToOpen.isEmpty()) {
         QFile file(fileToOpen);
         if (!file.open(QFile::ReadOnly | QFile::Text)) {
