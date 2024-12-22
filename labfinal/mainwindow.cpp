@@ -98,7 +98,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->add, &QAction::triggered, this, &MainWindow::on_actionAdd_triggered);
     connect(ui->gotobookmark, &QAction::triggered, this, &MainWindow::on_actionGoTo_triggered);
     connect(ui->remove, &QAction::triggered, this, &MainWindow::on_actionRemove_triggered);
-    connect(ui->removeall, &QAction::triggered, this, &MainWindow::on_actionRemove_triggered);
+    connect(ui->removeall, &QAction::triggered, this, &MainWindow::on_actionRemoveAll_triggered);
 
     autosaveTimer = new QTimer(this);
     connect(autosaveTimer, &QTimer::timeout, this, &MainWindow::autosaveFiles);
